@@ -4,9 +4,11 @@ Ver.00.1
 Author: Kyle Love
 Date: 8/27/2020
 
+Notes -
+
 Variable Usage:
 
-(A-G) - Used for program input and output. currently unused. Volatile data.
+(A-G) - Used for program input and output. Var A is used for programs C and D. Volatile data.
 
 (H) - Used for loops in programs Y and Z to loop through the elements of the stack.
 
@@ -43,4 +45,10 @@ S() - Swaps temp variables X, Y, Z, T with stack registers
 
 P() - Puts the x register into the next indirect memory address using var J and H.
 
-T() - Takes the last indirect memory address onto the stack(stack lift/stack push).
+T() - Takes the last element in indirect memory and pushes it onto the stack(stack lift/stack push). basically pop() from a list.
+
+C() - Compresses values in X, Y, Z registers into a single 3 element vector in the X register and A variable. Also places previous T register into the Y register.
+      Uses the T temp variable.
+
+D() - Decompresses a vector in the A variable to the X, Y, Z vectors. Flag 3 places the X register into the A variable before computation (if that is where the vector is).
+      Previous X register will move to register T.

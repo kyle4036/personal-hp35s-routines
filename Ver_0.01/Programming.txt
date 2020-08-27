@@ -2,11 +2,35 @@ Initial Program version
 Author: Kyle Love
 Date: 8/27/2020
 
-001     x<> X
-002     CLx
-003     STO J
-004     x<> X
-005     RTN
+C001    LBL C
+C002    R↑
+C003    STO T
+C004    R↓
+C005    [1,0,0]
+C006    *
+C007    x<>y
+C008    [0,1,0]
+C009    *
+C010    +
+C011    x<>y
+C012    [0,0,1]
+C013    *
+C014    +
+C015    RCL T
+C016    x<>y
+C017    STO A
+C018    RTN
+
+D001    LBL D
+D002    FS? 3
+D003    STO A
+D004    [0,0,1]
+D005    RCL* A
+D006    [0,1,0]
+D007    RCL* A
+D008    [1,0,0]
+D009    RCL* A
+D010    RTN
 
 S001    LBL S
 S002    x<> X
