@@ -3,6 +3,60 @@
 003     STO J
 004     x<> X
 005     RTN
+
 S001    LBL S
 S002    x<> X
-S003    R\/
+S003    R↓
+S004    x<> Y
+S005    R↓
+S006    x<> Z
+S007    R↓
+S008    x<> T
+S009    R↓
+S010    RTN
+
+P001    LBL P
+P002    ISG J
+P003    GTO P005
+P004    STO (J)
+P005    RTN
+
+T001    LBL T
+T002    0
+T003    x<> (J)
+T004    DSE J
+T005    RTN
+T006    RTN
+
+W001    LBL W
+W002    STO X
+W003    R↓
+W004    STO Y
+W005    R↓
+W006    STO Z
+W007    R↓
+W008    STO T
+W009    R↓
+W010    RTN
+
+X001    LBLX
+X002    STO W
+X003    RCL T
+X004    RCL Z
+X005    RCL Y
+X006    FS? 4
+GTO     X011
+X008    RCL W
+X009    x<> X
+X010    RTN
+X011    RCL X
+X012    RTN
+
+Y001    LBL Y
+Y002    STO X
+Y003    R↓
+Y004    4
+Y005    STO H
+Y006    CLx
+Y007    RCL X
+Y008    ISG J
