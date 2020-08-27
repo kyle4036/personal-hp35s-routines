@@ -1,3 +1,7 @@
+Initial Program version
+Author: Kyle Love
+Date: 8/27/2020
+
 001     x<> X
 002     CLx
 003     STO J

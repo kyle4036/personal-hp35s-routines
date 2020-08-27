@@ -1,0 +1,46 @@
+HP35s Programming
+
+Ver.00.1
+Author: Kyle Love
+Date: 8/27/2020
+
+Variable Usage:
+
+(A-G) - Used for program input and output. currently unused. Volatile data.
+
+(H) - Used for loops in programs Y and Z to loop through the elements of the stack.
+
+(J) - Pointer for the last stored element of indirect memory. Used by programs P, T, Y, and Z.
+
+(X, Y, Z, T) - Temporary variables for the stack registers. Used by programs S, W, and X. Volatile data.
+
+(W) - Additional temporary variable. Used by program Z. Volatile data.
+
+(I) - Additional indirect memory pointer. currently unused.
+
+(K-S, U, V) - Unused variables
+    plans on using variables
+    (K, L, M) - for more loop/flag information
+    (N-S) - Program data, such as pointers for different stacks
+
+
+Flags:
+
+(4) - Used to denote if the current x register from the stack should be saved into variable X. Checked by programs X and Z.
+
+
+Programs/routines:
+
+W() - Write the stack registers to temp variables X, Y, Z, T respectively
+
+X() - Read temp variables X, Y, Z, T into stack registers. Places previous x register into Var X if flag 4 is set.
+
+Y() - Write stack registers to indirect variables. Uses var J as a pointer to the last placed item and H to loop through the elements of the stacks
+
+Z() - Places last 4 indirect variables into the stack registers. Decrements var J and uses H to loop the stack.
+
+S() - Swaps temp variables X, Y, Z, T with stack registers
+
+P() - Puts the x register into the next indirect memory address using var J and H.
+
+T() - Takes the last indirect memory address onto the stack(stack lift/stack push).
