@@ -14,7 +14,7 @@ Variable Usage:
 
 (X, Y, Z, T) - Temporary variables for the stack registers. Used by programs S, W, and X. Volatile data.
 
-(W) - Additional temporary variable. Used by program Z. Volatile data.
+(W) - Additional temporary variable. Used by program X. Volatile data.
 
 (I) - Additional indirect memory pointer. currently unused.
 
